@@ -13,21 +13,21 @@ public class ReadConnectionData implements ReadJsonData {
     private ConnectData ConnectData;
     private JsonArray jsonArray;
 
-    @Override
-    public void createData(JsonElement jsonElement) {
-        String src = jsonElement.getAsJsonObject().get("src").getAsString();
-        String dest = jsonElement.getAsJsonObject().get("dest").getAsString();
-        this.ConnectData = new ConnectData(src, dest);
-    }
-    public void getConnectArray(String filename) throws FileNotFoundException {
+    public ReadConnectionData(String filename) throws FileNotFoundException {
+        this.ConnectData = new ConnectData();
         JsonObject jobject = ReadJsonData.getJsonFile(filename);
         JsonObject body = ReadJsonData.getData("body", jobject);
         this.jsonArray = body.getAsJsonArray("connection");
     }
+    @Override
+    public void createData(JsonElement jsonElement) {
+        String src = jsonElement.getAsJsonObject().get("src").getAsString();
+        String dest = jsonElement.getAsJsonObject().get("dest").getAsString();
+        this.ConnectData.setSrc(src); this.ConnectData.setDest(dest);
+    }
 
     @Override
-    public ArrayList<ConnectData> getDataArrayList(String filename) throws FileNotFoundException {
-        getConnectArray(filename);
+    public ArrayList<ConnectData> getDataArrayList() {
         for (JsonElement j:this.jsonArray
         ) {
             createData(j);

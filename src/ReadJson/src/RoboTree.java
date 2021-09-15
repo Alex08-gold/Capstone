@@ -1,14 +1,14 @@
 package ReadJson.src;
 
+import javax.media.j3d.TransformGroup;
 import java.util.List;
 
 public class RoboTree {
 	
 	private SubTree root;
-	private static TreeBuilder treeBuilder;
-	
-	public RoboTree(List<PartData> parts, List<ConnectData> connections){
-		treeBuilder = new TreeBuilder(parts, connections);
+
+	public RoboTree(List<TransformGroup> parts, List<ConnectData> connections){
+		TreeBuilder treeBuilder = new TreeBuilder(parts, connections);
 		root = new SubTree(treeBuilder.getRootData());
 		treeBuilder.buildTree(root);
 	}
@@ -19,5 +19,9 @@ public class RoboTree {
 	
 	public void traverse(){
 		root.traverse();
+	}
+
+	public SubTree getRoot() {
+		return root;
 	}
 }

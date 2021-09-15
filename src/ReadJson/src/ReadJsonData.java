@@ -22,5 +22,5 @@ public interface ReadJsonData{
 
     void createData(JsonElement jsonElement);
 
-    ArrayList getDataArrayList(String filename) throws FileNotFoundException;
+    ArrayList getDataArrayList();
 }

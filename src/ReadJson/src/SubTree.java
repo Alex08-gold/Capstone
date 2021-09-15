@@ -1,26 +1,27 @@
 package ReadJson.src;
 
+import javax.media.j3d.TransformGroup;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class SubTree {
 	
-	private PartData data;
+	private TransformGroup data;
 	private List<SubTree> children;
 	
-	public SubTree(PartData data, List<SubTree> children) {
+	public SubTree(TransformGroup data, List<SubTree> children) {
 		this.data = data;
 		this.children = children;
 	}
 	
-	public SubTree(PartData data) {
+	public SubTree(TransformGroup data) {
 		this.data = data;
-		this.children = new ArrayList<SubTree>();
+		this.children = new ArrayList<>();
 	}
 	
-	public PartData getData() {
-		return data;
+	public String getData() {
+		return data.getUserData().toString();
 	}
 	
 	public boolean hasChildren(){
@@ -31,12 +32,8 @@ public class SubTree {
 		children.add(leaf);
 	}
 	
-	public String getID(){
-		return data.getID();
-	}
-	
 	public boolean matchingSource(ConnectData connection){
-		return data.getID().equals(connection.getSrc());
+		return getData().equals(connection.getSrc());
 	}
 	
 	public void traverse(){	//preOrder traversal
@@ -49,21 +46,28 @@ public class SubTree {
 	}
 	
 	public String fullTree(){
-		StringBuilder s = new StringBuilder(data.toString() + "\n");
+		StringBuilder s = new StringBuilder(data.getUserData().toString() + "\n");
 		if(this.hasChildren()) {
 			for(SubTree child: children) {
 				s.append("  ").append(child.toString());
 			}
 		}
+		else{
+			return "Tree doesnt have children?"; //test
+		}
 		return s.toString();
 	}
-	
-	public String toString(){
-		return data.toString();
+
+	@Override
+	public String toString() {
+		return "SubTree{" +
+				"data=" + data +
+				", children=" + children +
+				'}';
 	}
-	
+
 	private void visit(){
-		System.out.println(this.getData().toString());
+		System.out.println(this.getData());  //System.out.println(this.getData().toString());
 	}
 
 }

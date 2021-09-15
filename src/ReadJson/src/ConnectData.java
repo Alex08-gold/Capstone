@@ -4,10 +4,13 @@ public class ConnectData {
 	
 	private String src;
 	private String dest;
-	
+
+	public ConnectData(){
+
+	}
 	public ConnectData(String src, String dest) {
-		this.src = src;
-		this.dest = dest;
+		this.setSrc(src);
+		this.setDest(dest);
 	}
 	
 	public String getSrc() {
@@ -20,5 +23,13 @@ public class ConnectData {
 	
 	public String toString() {
 		return src+"\t"+dest;
+	}
+
+	public void setSrc(String src) {
+		this.src = src;
+	}
+
+	public void setDest(String dest) {
+		this.dest = dest;
 	}
 }
