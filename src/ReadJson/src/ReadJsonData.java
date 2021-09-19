@@ -21,6 +21,8 @@ public interface ReadJsonData{
     }
 
     void createData(JsonElement jsonElement);
+    void createData(JsonElement jsonElement, ConnectData connectData);
+    void createData(JsonElement jsonElement, PartData partData);
 
     ArrayList getDataArrayList();
 }

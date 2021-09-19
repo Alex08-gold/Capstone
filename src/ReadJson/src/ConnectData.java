@@ -22,7 +22,7 @@ public class ConnectData {
 	}
 	
 	public String toString() {
-		return src+"\t"+dest;
+		return src+" "+dest;
 	}
 
 	public void setSrc(String src) {

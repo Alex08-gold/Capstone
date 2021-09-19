@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="706bfbe7-5505-4be1-ad71-83e2a95131ef" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1xcSSdHwjR4gGXOsJWoHcXzinvj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Capstone" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="ReadBodyData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ReadBodyData" />
+      <module name="ReadJson" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadJson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ReadJson" />
+      <module name="ReadJson" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="ReadJson" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.ReadBodyData" />
+        <item itemvalue="Application.ReadJson" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="706bfbe7-5505-4be1-ad71-83e2a95131ef" name="Default Changelist" comment="" />
+      <created>1630652884538</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630652884538</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="314" y="59" width="848" height="684" key="#Project_Structure" timestamp="1630652963000">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="314" y="59" width="848" height="684" key="#Project_Structure/72.27.1294.741@72.27.1294.741" timestamp="1630652963000" />
+    <state x="452" y="155" width="524" height="491" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1631004245827">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="452" y="155" width="524" height="491" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/72.27.1294.741@72.27.1294.741" timestamp="1631004245827" />
+    <state x="527" y="110" width="374" height="582" key="#com.intellij.ide.util.MemberChooser" timestamp="1631033617170">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="527" y="110" width="374" height="582" key="#com.intellij.ide.util.MemberChooser/72.27.1294.741@72.27.1294.741" timestamp="1631033617170" />
+    <state x="426" y="51" width="576" height="700" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1631001443577">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="426" y="51" width="576" height="700" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/72.27.1294.741@72.27.1294.741" timestamp="1631001443577" />
+    <state x="502" y="155" width="735" height="498" key="FileChooserDialogImpl" timestamp="1631124223138">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="502" y="155" width="735" height="498" key="FileChooserDialogImpl/72.27.1294.741@72.27.1294.741" timestamp="1631124223138" />
+    <state width="1248" height="172" key="GridCell.Tab.0.bottom" timestamp="1631124224556">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="172" key="GridCell.Tab.0.bottom/72.27.1294.741@72.27.1294.741" timestamp="1631124224556" />
+    <state width="1248" height="172" key="GridCell.Tab.0.center" timestamp="1631124224555">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="172" key="GridCell.Tab.0.center/72.27.1294.741@72.27.1294.741" timestamp="1631124224555" />
+    <state width="1248" height="172" key="GridCell.Tab.0.left" timestamp="1631124224555">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="172" key="GridCell.Tab.0.left/72.27.1294.741@72.27.1294.741" timestamp="1631124224555" />
+    <state width="1248" height="172" key="GridCell.Tab.0.right" timestamp="1631124224556">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="172" key="GridCell.Tab.0.right/72.27.1294.741@72.27.1294.741" timestamp="1631124224556" />
+    <state width="1248" height="215" key="GridCell.Tab.1.bottom" timestamp="1631002538256">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.1.bottom/72.27.1294.741@72.27.1294.741" timestamp="1631002538256" />
+    <state width="1248" height="215" key="GridCell.Tab.1.center" timestamp="1631002538255">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.1.center/72.27.1294.741@72.27.1294.741" timestamp="1631002538255" />
+    <state width="1248" height="215" key="GridCell.Tab.1.left" timestamp="1631002538255">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.1.left/72.27.1294.741@72.27.1294.741" timestamp="1631002538255" />
+    <state width="1248" height="215" key="GridCell.Tab.1.right" timestamp="1631002538256">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="215" key="GridCell.Tab.1.right/72.27.1294.741@72.27.1294.741" timestamp="1631002538256" />
+    <state x="202" y="27" width="1024" height="741" key="SettingsEditor" timestamp="1631042044806">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="202" y="27" width="1024" height="741" key="SettingsEditor/72.27.1294.741@72.27.1294.741" timestamp="1631042044806" />
+    <state x="375" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1631122937681">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="375" y="225" key="com.intellij.ide.util.TipDialog/72.27.1294.741@72.27.1294.741" timestamp="1631122937681" />
+    <state x="309" y="62" width="800" height="684" key="scopes" timestamp="1631002075665">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="309" y="62" width="800" height="684" key="scopes/72.27.1294.741@72.27.1294.741" timestamp="1631002075665" />
+  </component>
+</project>

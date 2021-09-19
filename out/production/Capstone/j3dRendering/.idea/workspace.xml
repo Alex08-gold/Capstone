@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cf940fd8-22f8-4310-8901-1a4f3b981888" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1xXbBsNGinkc8YDusDpWp5wbc85" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ReadJson" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager" selected="Application.Java3DCubes">
+    <configuration name="Cubes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Cubes" />
+      <module name="j3dRendering" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Java3DCubes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Java3DCubes" />
+      <module name="j3dRendering" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="j3dRendering" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Java3DCubes" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Cubes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf940fd8-22f8-4310-8901-1a4f3b981888" name="Default Changelist" comment="" />
+      <created>1630504247615</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630504247615</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="527" y="110" width="374" height="582" key="#com.intellij.ide.util.MemberChooser" timestamp="1631041037014">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="527" y="110" width="374" height="582" key="#com.intellij.ide.util.MemberChooser/72.27.1294.741@72.27.1294.741" timestamp="1631041037014" />
+    <state x="341" y="141" width="735" height="520" key="FileChooserDialogImpl" timestamp="1631041589150">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="341" y="141" width="735" height="520" key="FileChooserDialogImpl/72.27.1294.741@72.27.1294.741" timestamp="1631041589150" />
+    <state width="1248" height="87" key="GridCell.Tab.0.bottom" timestamp="1630933780867">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="87" key="GridCell.Tab.0.bottom/72.27.1294.741@72.27.1294.741" timestamp="1630933780867" />
+    <state width="1248" height="87" key="GridCell.Tab.0.center" timestamp="1630933780866">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="87" key="GridCell.Tab.0.center/72.27.1294.741@72.27.1294.741" timestamp="1630933780866" />
+    <state width="1248" height="87" key="GridCell.Tab.0.left" timestamp="1630933780866">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="87" key="GridCell.Tab.0.left/72.27.1294.741@72.27.1294.741" timestamp="1630933780866" />
+    <state width="1248" height="87" key="GridCell.Tab.0.right" timestamp="1630933780866">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state width="1248" height="87" key="GridCell.Tab.0.right/72.27.1294.741@72.27.1294.741" timestamp="1630933780866" />
+    <state x="202" y="27" width="1024" height="741" key="SettingsEditor" timestamp="1631042153857">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="202" y="27" width="1024" height="741" key="SettingsEditor/72.27.1294.741@72.27.1294.741" timestamp="1631042153857" />
+    <state x="375" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1631031136446">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="375" y="225" key="com.intellij.ide.util.TipDialog/72.27.1294.741@72.27.1294.741" timestamp="1631031136446" />
+    <state x="72" y="27" width="1284" height="741" key="new project wizard" timestamp="1631041766058">
+      <screen x="72" y="27" width="1294" height="741" />
+    </state>
+    <state x="72" y="27" width="1284" height="741" key="new project wizard/72.27.1294.741@72.27.1294.741" timestamp="1631041766058" />
+  </component>
+</project>

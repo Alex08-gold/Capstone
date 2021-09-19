@@ -51,8 +51,7 @@ public class ReadJson {
     public static PartData createBodyData(JsonElement jsonObject){
         String id = jsonObject.getAsJsonObject().get("id").getAsString();
         String type = jsonObject.getAsJsonObject().get("type").getAsString();
-        boolean root = jsonObject.getAsJsonObject().get("root").getAsBoolean();
-        return new PartData(id,type,root);
+        return new PartData(id,type);
     }
 }
 

@@ -1,0 +1,4 @@
+RoboTree constructor creates duplicates of data in arraylists
+TreeBuilder delets first element in arraylist 
+No problem with ReadData classes (check testReadData) 
+problem in traverse method in robotree: getAllChildren includes the cube attached which cant be casted to a transform group
