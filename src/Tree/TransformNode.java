@@ -1,21 +1,33 @@
-package ReadJson.src;
+package Tree.src;
+
+import ReadJson.src.PartData;
+import j3dRendering.src.Component;
+import j3dRendering.src.Core;
+import j3dRendering.src.FixedBrick;
+import j3dRendering.src.Joint;
 
 import javax.media.j3d.TransformGroup;
 
-public class TransformNode extends TransformGroup{
-    private PartData data;
+// Sets PartData object as userData and adds component as child
+
+public class TransformNode extends TransformGroup {
 
     public TransformNode(PartData part){
-        this.data = part;
-        this.setUserData(data);
+        this.setUserData(part);
         Component component = null;
-        if(data.getType().equals("CoreComponent")){
-            component = new Core();
-
-        }
-        else if(data.getType().equals("FixedBrick")){
-            component = new FixedBrick();
+        String type  = part.getType();
+        switch (type) {
+            case "CoreComponent":
+                component = new Core();
+                break;
+            case "FixedBrick":
+                component = new FixedBrick();
+                break;
+            default:
+                component = new Joint();
+                break;
         }
         this.addChild(component);
+
     }
 }
