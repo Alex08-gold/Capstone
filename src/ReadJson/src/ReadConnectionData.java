@@ -19,11 +19,6 @@ public class ReadConnectionData implements ReadJsonData {
     }
 
     @Override
-    public void createData(JsonElement jsonElement) {
-
-    }
-
-    @Override
     public void createData(JsonElement jsonElement, ConnectData connectData) {
         String src = jsonElement.getAsJsonObject().get("src").getAsString();
         String dest = jsonElement.getAsJsonObject().get("dest").getAsString();

@@ -16,7 +16,7 @@ public class ConnectData {
 		this.setDest(dest);
 	}
 
-	// Getter and setter methods 
+	// Getter and setter methods
 
 	public String getSrc() {
 

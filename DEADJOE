@@ -1,0 +1,63 @@
+
+*** These modified files were found in JOE when it aborted on Sun Sep 19 19:31:08 2021
+*** JOE was aborted because the terminal closed
+
+*** File '/home/alex/IdeaProjects/Capstone/.git/COMMIT_EDITMSG'
+Updat=
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Changes to be committed:
+#	deleted:    src/Component.java
+#	modified:   src/ConnectData.java
+#	deleted:    src/Core.java
+#	modified:   src/PartData.java
+#	modified:   src/ReadConnectionData.java
+#	modified:   src/ReadJsonData.java
+#	modified:   src/ReadPartData.java
+#	deleted:    src/Test.java
+#	deleted:    src/TransformNode.java
+#	deleted:    src/TreeBuilder.java
+#
+# Changes not staged for commit:
+#	modified:   ../../bugs.txt
+#	deleted:    ../../out/production/Capstone/ReadJson/src/Component.class
+#	modified:   ../../out/production/Capstone/ReadJson/src/ConnectData.class
+#	deleted:    ../../out/production/Capstone/ReadJson/src/Core.class
+#	deleted:    ../../out/production/Capstone/ReadJson/src/FixedBrick.class
+#	deleted:    ../../out/production/Capstone/ReadJson/src/Test.class
+#	deleted:    ../../out/production/Capstone/ReadJson/src/TransformNode.class
+#	deleted:    ../../out/production/Capstone/j3dRendering/src/Cubes.class
+#	deleted:    ../../out/production/Capstone/j3dRendering/src/Java3DCubes.class
+#	deleted:    ../../out/production/Capstone/j3dRendering/src/RoboBody.class
+#	deleted:    ../../src.zip
+#	modified:   ../Testing/src/Test.java
+#
+# Untracked files:
+#	../../out/production/Capstone/Testing/
+#	../../out/production/Capstone/Tree/
+#	../../out/production/Capstone/j3dRendering/src/Component.class
+#	../../out/production/Capstone/j3dRendering/src/Core.class
+#	../../out/production/Capstone/j3dRendering/src/FixedBrick.class
+#	../../out/production/Capstone/j3dRendering/src/Joint.class
+#
+
+*** File '(Unnamed)'
+Makefile
+Makefile
+Makefile
+Makefile
+Makefile
+Makefile
+Makefile
+Makefile
+Makefile
+Makefile
+/home/alex/IdeaProjects/Capstone/.git/COMMIT_EDITMSG
+
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc

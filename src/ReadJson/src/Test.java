@@ -1,89 +1,37 @@
 package ReadJson.src;
-import java.applet.*;
-import java.awt.*;
 
-import javax.media.j3d.*;
-import javax.swing.*;
-import javax.vecmath.*;
+import javax.media.j3d.TransformGroup;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.sun.j3d.utils.behaviors.keyboard.KeyNavigatorBehavior;
-import com.sun.j3d.utils.geometry.ColorCube;
-import com.sun.j3d.utils.universe.SimpleUniverse;
-import com.sun.j3d.utils.universe.PlatformGeometry;
+public class Test {
+	
+	public static void main(String[] args) throws FileNotFoundException {
 
-public class Test extends Applet {
+		String filename = "/home/alex/RoboViz/GenerationBest-1.json";
+		ReadPartData partData = new ReadPartData(filename);
+		ReadConnectionData connectData = new ReadConnectionData(filename);
 
-    private SimpleUniverse universe = null;
-    private Canvas3D canvas = null;
-    private TransformGroup viewtrans = null;
+		ArrayList<TransformGroup> tg = new ArrayList<>();
+		ArrayList<ConnectData> connect = new ArrayList<>();
+        TransformGroup transformGroup = new TransformGroup();
+        PartData partdata = new PartData("id", "type", true);
+        transformGroup.setUserData(partdata);
+		tg.add(transformGroup);
+		connect.add(new ConnectData("src", "dest"));
 
-        public Test() {
-            setLayout(new BorderLayout());
-            GraphicsConfiguration config = SimpleUniverse.getPreferredConfiguration();
+		RoboTree roboTree = new RoboTree(tg, connect);
+		System.out.print(tg);
+		System.out.print(connect);
 
-            canvas = new Canvas3D(config);
-            add("Center", canvas);
-            universe = new SimpleUniverse(canvas);
-
-            BranchGroup scene = createSceneGraph();
-            universe.getViewingPlatform().setNominalViewingTransform();
-
-            universe.getViewer().getView().setBackClipDistance(100.0);
-            universe.addBranchGraph(scene);
-
-        }
-        private BranchGroup createColorCube() {
-
-            BranchGroup objRoot = new BranchGroup();
-
-            PartData partData = new PartData("core", "CoreComponent");
-            TransformNode transformNode = new TransformNode(partData);
-
-            Transform3D t3d = new Transform3D();
-
-            t3d.setTranslation(new Vector3d(0.0, 0.3, -1.5));
-            t3d.setRotation(new AxisAngle4f(0.0f, 0.0f, 0.0f, 0.0f));
-            t3d.setScale(0.125);
-
-            transformNode.setTransform(t3d);
-
-            PartData part2 = new PartData("id", "FixedBrick");
-            TransformNode tg_2 = new TransformNode(part2);
-
-            Transform3D t3d_2 = new Transform3D();
-
-            t3d_2.setTranslation(new Vector3d(5.0, 0.0, 0.0));
-            t3d_2.setRotation(new AxisAngle4f(0.0f, 1.0f, 0.0f, 3.14f));
-            t3d_2.setScale(0.1);
-
-            tg_2.setTransform(t3d_2);
-            transformNode.addChild(tg_2);
-
-            objRoot.addChild(transformNode);
-
-            objRoot.compile();
-            return objRoot;
-
-        }
-        private BranchGroup createSceneGraph() {
-            BranchGroup objRoot = new BranchGroup();
-
-            objRoot.addChild(createColorCube());
-            return objRoot;
-        }
-
-    public static void main(String[] args){
-        System.setProperty("sun.awt.noerasebackground", "true");
-        JPopupMenu.setDefaultLightWeightPopupEnabled(false);
-
-        ToolTipManager ttm = ToolTipManager.sharedInstance();
-        ttm.setLightWeightPopupEnabled(false);
-
-        Test test = new Test();
-        JFrame frame = new JFrame("Java3D Prototype");
-        frame.setSize(1000, 1000);
-        frame.getContentPane().add(test);
-        frame.setVisible(true);
-
-    }
+		//RoboTree robotree = new RoboTree(partData.getDataArrayList(), connectData.getDataArrayList());
+		for(TransformGroup transform: partData.getDataArrayList()){
+			System.out.println(transformGroup.getUserData().toString());
+		}
+		System.out.println("ConnectData: "+connectData.getDataArrayList());
+		//robotree.traverse(); // test
+		System.out.println("done");
+	}
+	
 }

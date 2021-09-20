@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ReadPartData implements ReadJsonData {
 
-    private ArrayList<TransformGroup> TransformArrayList = new ArrayList<>();
+    private ArrayList<PartData> PartDataArrayList = new ArrayList<>();
     private JsonArray jsonArray;
 
     public ReadPartData(String filename) throws FileNotFoundException {
@@ -27,26 +27,20 @@ public class ReadPartData implements ReadJsonData {
     }
 
     @Override
-    public void createData(JsonElement jsonElement) {
-
-    }
-
-    @Override
     public void createData(JsonElement jsonElement, ConnectData connectData) {
 
     }
 
     @Override
-    public ArrayList<TransformGroup> getDataArrayList() {
+    public ArrayList<PartData> getDataArrayList() {
 
         for (JsonElement j:this.jsonArray)
         {
             PartData partData = new PartData();
             createData(j, partData);
-            //TransformGroup tg = partData.getTransformGroup();
-            //tg.setUserData(partData);
-            //this.TransformArrayList.add(tg);
+            PartDataArrayList.add(partData);
+
         }
-        return this.TransformArrayList;
+        return this.PartDataArrayList;
     }
 }

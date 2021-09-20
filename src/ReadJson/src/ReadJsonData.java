@@ -20,7 +20,6 @@ public interface ReadJsonData{
         return jsonObject;
     }
 
-    void createData(JsonElement jsonElement);
     void createData(JsonElement jsonElement, ConnectData connectData);
     void createData(JsonElement jsonElement, PartData partData);
 
