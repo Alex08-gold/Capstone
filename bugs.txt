@@ -2,3 +2,13 @@ RoboTree constructor creates duplicates of data in arraylists
 TreeBuilder delets first element in arraylist 
 No problem with ReadData classes (check testReadData) 
 problem in traverse method in robotree: getAllChildren includes the cube attached which cant be casted to a transform group
+
+TODO:
+stl file rendering
+architecture plan 
+populate trello with tasks and identify independent steps. 
+driver code to combine tree and json data and return root to presentation layer. 
+
+Jessica: 
+build tree (roboTree and TreeBuilder) 
+check out tranform3D 

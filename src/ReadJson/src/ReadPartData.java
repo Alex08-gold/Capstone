@@ -23,7 +23,8 @@ public class ReadPartData implements ReadJsonData {
     public void createData(JsonElement jsonElement, PartData partData) {
         String id = jsonElement.getAsJsonObject().get("id").getAsString();
         String type = jsonElement.getAsJsonObject().get("type").getAsString();
-        partData.setId(id); partData.setType(type);
+        int orientation = jsonElement.getAsJsonObject().get("orientation").getAsInt();
+        partData.setId(id); partData.setType(type); partData.setOrientation(orientation);
     }
 
     @Override

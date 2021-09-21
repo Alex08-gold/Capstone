@@ -8,9 +8,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public interface ReadJsonData{
+public interface ReadJsonData {
 
     static JsonObject getData(String data, JsonObject jsonObject) {
+
         return (JsonObject) jsonObject.get(data);
     }
 
@@ -20,7 +21,7 @@ public interface ReadJsonData{
         return jsonObject;
     }
 
-    void createData(JsonElement jsonElement, ConnectData connectData);
+    void createData (JsonElement jsonElement, ConnectData connectData);
     void createData(JsonElement jsonElement, PartData partData);
 
     ArrayList getDataArrayList();

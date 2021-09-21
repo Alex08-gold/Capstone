@@ -1,89 +1,56 @@
-package ReadJson.src;
-import java.applet.*;
-import java.awt.*;
+package Testing.src;
 
-import javax.media.j3d.*;
-import javax.swing.*;
-import javax.vecmath.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.sun.j3d.utils.behaviors.keyboard.KeyNavigatorBehavior;
-import com.sun.j3d.utils.geometry.ColorCube;
-import com.sun.j3d.utils.universe.SimpleUniverse;
-import com.sun.j3d.utils.universe.PlatformGeometry;
+import ReadJson.src.ConnectData;
+import ReadJson.src.PartData;
+import Tree.src.TransformNode;
+import Tree.src.TreeBuilder;
 
-public class Test extends Applet {
 
-    private SimpleUniverse universe = null;
-    private Canvas3D canvas = null;
-    private TransformGroup viewtrans = null;
+public class Test {
 
-        public Test() {
-            setLayout(new BorderLayout());
-            GraphicsConfiguration config = SimpleUniverse.getPreferredConfiguration();
+	//public TransformNode root;
 
-            canvas = new Canvas3D(config);
-            add("Center", canvas);
-            universe = new SimpleUniverse(canvas);
+	public TransformNode builder(){
+		//Basic tree made from two basic arrayLists, just to make sure everything is working
+		ConnectData C_H1 = new ConnectData("Core", "Hip1");
+		ConnectData H1_UL1 = new ConnectData("Hip1", "UL1");
+		ConnectData C_H2 = new ConnectData("Core", "Hip2");
 
-            BranchGroup scene = createSceneGraph();
-            universe.getViewingPlatform().setNominalViewingTransform();
+		List<ConnectData> connections = new ArrayList<ConnectData>();
+		connections.add(C_H1);
+		connections.add(H1_UL1);
+		connections.add(C_H2);
 
-            universe.getViewer().getView().setBackClipDistance(100.0);
-            universe.addBranchGraph(scene);
+		PartData partCore = new PartData("Core", "CoreComponent", true, 0);
+		PartData partHip1 = new PartData("Hip1", "ActiveHinge", false, 2);
+		PartData partUL1 = new PartData("UL1", "FixedBrick", false, 0);
+		PartData partHip2 = new PartData("Hip2", "ActiveHinge", false, 1);
 
-        }
-        private BranchGroup createColorCube() {
+		List<PartData> parts = new ArrayList<PartData>();
+		parts.add(partCore);
+		parts.add(partHip1);
+		parts.add(partUL1);
+		parts.add(partHip2);
 
-            BranchGroup objRoot = new BranchGroup();
+		TransformNode root = new TransformNode(partCore);
+		TreeBuilder treeBuilder = new TreeBuilder(parts, connections);
+		treeBuilder.buildTree(root);
 
-            PartData partData = new PartData("core", "CoreComponent");
-            TransformNode transformNode = new TransformNode(partData);
+		return root;
+	}
 
-            Transform3D t3d = new Transform3D();
+	public TransformNode buildRoot(){
+		PartData partCore = new PartData("Core", "CoreComponent", true, 0);
+		TransformNode root = new TransformNode(partCore);
+		System.out.println(root.toString());
+		return root;
+	}
 
-            t3d.setTranslation(new Vector3d(0.0, 0.3, -1.5));
-            t3d.setRotation(new AxisAngle4f(0.0f, 0.0f, 0.0f, 0.0f));
-            t3d.setScale(0.125);
-
-            transformNode.setTransform(t3d);
-
-            PartData part2 = new PartData("id", "FixedBrick");
-            TransformNode tg_2 = new TransformNode(part2);
-
-            Transform3D t3d_2 = new Transform3D();
-
-            t3d_2.setTranslation(new Vector3d(5.0, 0.0, 0.0));
-            t3d_2.setRotation(new AxisAngle4f(0.0f, 1.0f, 0.0f, 3.14f));
-            t3d_2.setScale(0.1);
-
-            tg_2.setTransform(t3d_2);
-            transformNode.addChild(tg_2);
-
-            objRoot.addChild(transformNode);
-
-            objRoot.compile();
-            return objRoot;
-
-        }
-        private BranchGroup createSceneGraph() {
-            BranchGroup objRoot = new BranchGroup();
-
-            objRoot.addChild(createColorCube());
-            return objRoot;
-        }
-
-    public static void main(String[] args){
-        System.setProperty("sun.awt.noerasebackground", "true");
-        JPopupMenu.setDefaultLightWeightPopupEnabled(false);
-
-        ToolTipManager ttm = ToolTipManager.sharedInstance();
-        ttm.setLightWeightPopupEnabled(false);
-
-        Test test = new Test();
-        JFrame frame = new JFrame("Java3D Prototype");
-        frame.setSize(1000, 1000);
-        frame.getContentPane().add(test);
-        frame.setVisible(true);
-
-    }
+	//public TransformNode returnRoot(){
+		//return root;
+	//}
+	
 }
