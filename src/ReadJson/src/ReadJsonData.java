@@ -23,6 +23,7 @@ public interface ReadJsonData {
 
     void createData (JsonElement jsonElement, ConnectData connectData);
     void createData(JsonElement jsonElement, PartData partData);
+    void createData(JsonElement jsonElement, BrainData brainData);
 
     ArrayList getDataArrayList();
 }
