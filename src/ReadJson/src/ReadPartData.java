@@ -28,6 +28,11 @@ public class ReadPartData implements ReadJsonData {
     }
 
     @Override
+    public void createData(JsonElement jsonElement, BrainData brainData) {
+
+    }
+
+    @Override
     public void createData(JsonElement jsonElement, ConnectData connectData) {
 
     }

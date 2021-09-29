@@ -1,10 +1,13 @@
 package Testing.src;
 
+import ReadJson.src.PartData;
 import ReadJson.src.ReadConnectionData;
 import ReadJson.src.ReadPartData;
+import Tree.src.TransformNode;
 import Tree.src.TreeBuilder;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class DriverTest {
     public static void main(String[] args) throws FileNotFoundException {
@@ -16,7 +19,7 @@ public class DriverTest {
         //TODO: Get User Input (UI Code)
 
         TreeBuilder tree = new TreeBuilder(partData.getDataArrayList(),connectData.getDataArrayList()); // Build tree using partData and ConnectData Lists
-        //tree.buildTree(); buildTree needs to take in a Transform node but TreeBuilder works work partdata and connect data
+        tree.buildTree(tree.getRoot());
 
         //TODO: Build Tree
         // Pass Root of the Tree and User Input to Rendering Environment

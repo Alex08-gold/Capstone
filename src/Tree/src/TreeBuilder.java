@@ -9,7 +9,8 @@ import javax.media.j3d.Transform3D;
 import javax.vecmath.Vector3d;
 
 public class TreeBuilder {
-	
+
+	private TransformNode root;
 	private List<PartData> parts;
 	private List<ConnectData> connections;
 	public final double scalePart;	//how big all the individual parts are
@@ -18,6 +19,7 @@ public class TreeBuilder {
 	public TreeBuilder(List<PartData> parts, List<ConnectData> connections){
 		this.parts = parts;
 		this.connections = connections;
+		this.root = new TransformNode(parts.get(0));
 		this.scalePart = 1;
 		this.distParts = 2.2;
 	}
@@ -81,6 +83,9 @@ public class TreeBuilder {
 				buildTree(child);
 			}
 		}
-	}	
-	
+	}
+
+	public TransformNode getRoot() {
+		return root;
+	}
 }

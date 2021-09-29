@@ -31,6 +31,11 @@ public class ReadConnectionData implements ReadJsonData {
     }
 
     @Override
+    public void createData(JsonElement jsonElement, BrainData brainData) {
+
+    }
+
+    @Override
     public ArrayList<ConnectData> getDataArrayList() {
         for (JsonElement j:this.jsonArray
         ) {

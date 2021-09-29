@@ -32,13 +32,15 @@ public class RenderTest extends Applet {
     }
     private BranchGroup createSceneGraph() {
         BranchGroup objRoot = new BranchGroup();
+
         TransformGroup tg = new TransformGroup();
         Transform3D tg3 = new Transform3D();
         tg3.setScale(0.125);
         tg.setTransform(tg3);
+
         Test testTree = new Test();
         tg.addChild(testTree.builder());
-       // System.out.println(root.toString());
+
         objRoot.addChild(tg);
         return objRoot;
     }
