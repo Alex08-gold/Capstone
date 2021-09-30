@@ -23,8 +23,9 @@ public class ReadPartData implements ReadJsonData {
     public void createData(JsonElement jsonElement, PartData partData) {
         String id = jsonElement.getAsJsonObject().get("id").getAsString();
         String type = jsonElement.getAsJsonObject().get("type").getAsString();
+        Boolean root = jsonElement.getAsJsonObject().get("root").getAsBoolean();
         int orientation = jsonElement.getAsJsonObject().get("orientation").getAsInt();
-        partData.setId(id); partData.setType(type); partData.setOrientation(orientation);
+        partData.setId(id); partData.setType(type); partData.setRoot(root); partData.setOrientation(orientation);
     }
 
     @Override
@@ -48,5 +49,9 @@ public class ReadPartData implements ReadJsonData {
 
         }
         return this.PartDataArrayList;
+    }
+
+    public JsonArray getJsonArray(){
+        return this.jsonArray;
     }
 }

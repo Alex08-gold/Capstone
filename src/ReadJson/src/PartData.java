@@ -23,10 +23,10 @@ public class PartData {
 	}
 	
 	public String toString() {
-		return getId() +"\t"+ getType() +"\t"+ isRoot() +"\t"+ getOrientation();
+		return getID() +"\t"+ getType() +"\t"+ isRoot() +"\t"+ getOrientation();
 	}
 
-	public String getId() {
+	public String getID() {
 		return this.id;
 	}
 

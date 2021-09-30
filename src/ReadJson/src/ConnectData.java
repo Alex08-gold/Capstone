@@ -14,11 +14,11 @@ public class ConnectData {
 	}
 	
 	public String getSrc() {
-		return src;
+		return this.src;
 	}
 	
 	public String getDest(){
-		return dest;
+		return this.dest;
 	}
 	
 	public String toString() {
