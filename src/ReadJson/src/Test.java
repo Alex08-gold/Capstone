@@ -14,13 +14,13 @@ public class Test {
 		ReadConnectionData connectData = new ReadConnectionData(filename);
 
 		for (PartData pd:partData.getDataArrayList()) {
-			System.out.print(pd.toString()+ " ");
+			System.out.println(pd.toString());
 		}
 
 		System.out.println();
 
 		for (ConnectData cd:connectData.getDataArrayList()) {
-			System.out.print(cd.toString()+ " ");
+			System.out.println(cd.toString());
 		}
 
 
