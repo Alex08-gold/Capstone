@@ -45,4 +45,8 @@ public class ReadConnectionData implements ReadJsonData {
         }
         return this.ConnectDataArrayList;
     }
+
+    public JsonArray getJsonArray(){
+        return this.jsonArray;
+    }
 }

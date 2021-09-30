@@ -19,9 +19,4 @@ class ReadPartDataTest {
         readpartData.createData(readpartData.getJsonArray().get(0), pd);
         assertEquals(exspect, pd.toString());
     }
-
-    @Test
-    // This is basically testing createData method. Not sure whether or not to include this test. 
-    void getDataArrayList() {
-    }
 }
