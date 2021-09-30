@@ -17,13 +17,9 @@ public class PartData {
 		this.setRoot(root);
 		this.setOrientation(orientation);
 	}
-	
-	public String getID() {
-		return getId();
-	}
-	
+
 	public String getType() {
-		return type;
+		return this.type;
 	}
 	
 	public String toString() {
@@ -31,7 +27,7 @@ public class PartData {
 	}
 
 	public String getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(String id) {
@@ -43,7 +39,7 @@ public class PartData {
 	}
 
 	public boolean isRoot() {
-		return root;
+		return this.root;
 	}
 
 	public void setRoot(boolean root) {
@@ -51,7 +47,7 @@ public class PartData {
 	}
 
 	public int getOrientation() {
-		return orientation;
+		return this.orientation;
 	}
 
 	public void setOrientation(int orientation) {
