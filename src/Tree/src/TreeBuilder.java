@@ -3,6 +3,7 @@ package Tree.src;
 import ReadJson.src.ConnectData;
 import ReadJson.src.PartData;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 import javax.media.j3d.Transform3D;
@@ -16,7 +17,7 @@ public class TreeBuilder {
 	public final double scalePart;	//how big all the individual parts are
 	public final double distParts;	//how far apart the parts are
 	
-	public TreeBuilder(List<PartData> parts, List<ConnectData> connections){
+	public TreeBuilder(List<PartData> parts, List<ConnectData> connections) throws FileNotFoundException {
 		this.parts = parts;
 		this.connections = connections;
 		this.root = new TransformNode(parts.get(0));
@@ -68,7 +69,7 @@ public class TreeBuilder {
 		return t3d;
 	}
 	
-	public void buildTree(TransformNode node){
+	public void buildTree(TransformNode node) throws FileNotFoundException {
 		for(ConnectData connection: connections){
 			if(node.getID().equals(connection.getSrc())){
 				

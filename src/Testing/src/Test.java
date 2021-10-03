@@ -1,5 +1,6 @@
 package Testing.src;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Test {
 
 	//public TransformNode root;
 
-	public TransformNode builder(){
+	public TransformNode builder() throws FileNotFoundException {
 		//Basic tree made from two basic arrayLists, just to make sure everything is working
 		ConnectData C_H1 = new ConnectData("Core", "Hip1");
 		ConnectData H1_UL1 = new ConnectData("Hip1", "UL1");
@@ -42,7 +43,7 @@ public class Test {
 		return root;
 	}
 
-	public TransformNode buildRoot(){
+	public TransformNode buildRoot() throws FileNotFoundException {
 		PartData partCore = new PartData("Core", "CoreComponent", true, 0);
 		TransformNode root = new TransformNode(partCore);
 		System.out.println(root.toString());

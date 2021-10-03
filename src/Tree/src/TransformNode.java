@@ -6,6 +6,7 @@ import j3dRendering.src.Core;
 import j3dRendering.src.FixedBrick;
 import j3dRendering.src.Joint;
 import javax.media.j3d.TransformGroup;
+import java.io.FileNotFoundException;
 
 
 public class TransformNode extends TransformGroup {
@@ -19,7 +20,7 @@ public class TransformNode extends TransformGroup {
 	}
 	
 	//Constructor that's actually used. Will add more cases
-	public TransformNode(PartData data) {
+	public TransformNode(PartData data) throws FileNotFoundException {
 		super();
 		this.data = data;
 		

@@ -21,7 +21,7 @@ public class DriverTest {
         TreeBuilder tree = new TreeBuilder(partData.getDataArrayList(),connectData.getDataArrayList()); // Build tree using partData and ConnectData Lists
         tree.buildTree(tree.getRoot());
 
-        //TODO: Build Tree
+        //TODO:
         // Pass Root of the Tree and User Input to Rendering Environment
         // Call main of rendering environment
 

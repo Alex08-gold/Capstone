@@ -1,24 +1,21 @@
 package Testing.src;
 
-import java.applet.*;
-import java.awt.*;
-import java.io.FileNotFoundException;
+import com.sun.j3d.utils.universe.SimpleUniverse;
+import j3dRendering.src.Core;
 
 import javax.media.j3d.*;
 import javax.swing.*;
-import javax.vecmath.*;
+import javax.vecmath.Color3f;
+import javax.vecmath.Point3d;
+import java.applet.Applet;
+import java.awt.*;
+import java.io.FileNotFoundException;
 
-import com.sun.j3d.loaders.Scene;
-import com.sun.j3d.loaders.objectfile.ObjectFile;
-import com.sun.j3d.utils.universe.SimpleUniverse;
-
-public class RenderTest extends Applet {
-
+public class TestCoreRendering extends Applet {
     private SimpleUniverse universe = null;
     private Canvas3D canvas = null;
 
-    public RenderTest() throws FileNotFoundException {
-
+    public TestCoreRendering() throws FileNotFoundException {
         setLayout(new BorderLayout());
         GraphicsConfiguration config = SimpleUniverse.getPreferredConfiguration();
 
@@ -31,22 +28,10 @@ public class RenderTest extends Applet {
 
         universe.getViewer().getView().setBackClipDistance(100.0);
         universe.addBranchGraph(scene);
-
     }
+
     private BranchGroup createSceneGraph() throws FileNotFoundException {
-        // Creating wireframe appearance
-        Appearance app = new Appearance();
-        PolygonAttributes polyAttrbutes = new PolygonAttributes();
-        polyAttrbutes.setPolygonMode( PolygonAttributes.POLYGON_LINE );
-        polyAttrbutes.setCullFace( PolygonAttributes.CULL_NONE ) ;
-        app.setPolygonAttributes( polyAttrbutes );
-
-        Shape3D shape = new Shape3D();
-        shape.setAppearance(app);
-
         BranchGroup objRoot = new BranchGroup();
-        ObjectFile objFile = new ObjectFile(ObjectFile.RESIZE | ObjectFile.TRIANGULATE);
-        Scene objscene = objFile.load("/home/alex/IdeaProjects/Capstone/CoreComponent.obj");
 
         TransformGroup objScale = new TransformGroup();
         Transform3D t3d = new Transform3D();
@@ -59,8 +44,7 @@ public class RenderTest extends Applet {
         objTrans.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
         objScale.addChild(objTrans);
 
-        objTrans.addChild(objscene.getSceneGroup());
-        objTrans.addChild(shape);
+        objTrans.addChild(new Core());
 
         BoundingSphere bounds = new BoundingSphere(new Point3d(0.0,0.0,0.0), 100.0);
         Color3f bgColor = new Color3f(1.0f, 1.0f, 1.0f);
@@ -70,7 +54,6 @@ public class RenderTest extends Applet {
 
         return objRoot;
     }
-
     public static void main(String[] args) throws FileNotFoundException {
         System.setProperty("sun.awt.noerasebackground", "true");
         JPopupMenu.setDefaultLightWeightPopupEnabled(false);
@@ -78,7 +61,7 @@ public class RenderTest extends Applet {
         ToolTipManager ttm = ToolTipManager.sharedInstance();
         ttm.setLightWeightPopupEnabled(false);
 
-        RenderTest test = new RenderTest();
+        TestCoreRendering test = new TestCoreRendering();
         JFrame frame = new JFrame("Java3D Prototype");
         frame.setSize(1000, 1000);
         frame.getContentPane().add(test);
