@@ -45,7 +45,7 @@ public class TestCoreRendering extends Applet {
         objTrans.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
         objScale.addChild(objTrans);
 
-        objTrans.addChild(new FixedBrick());
+        objTrans.addChild(new Core());
 
         BoundingSphere bounds = new BoundingSphere(new Point3d(0.0,0.0,0.0), 100.0);
         Color3f bgColor = new Color3f(1.0f, 1.0f, 1.0f);

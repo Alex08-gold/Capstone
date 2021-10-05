@@ -1,5 +1,8 @@
 package letsdothis.src;
+import Tree.src.TransformNode;
 import Tree.src.TreeBuilder;
+import com.sun.j3d.utils.geometry.ColorCube;
+
 import java.applet.*;
 import javax.media.j3d.*;
 import javax.vecmath.*;
@@ -9,10 +12,10 @@ public class Terrain {
 	private int width;
 	private TransformGroup terrainTransformGroup;
 	
-	public Terrain(int height, int width, TreeBuilder tree) {
+	public Terrain(int height, int width, TransformNode tree) {
 		this.height = height;
 		this.width = width;
-		TransformGroup terrainTransformGroup = new TransformGroup();
+		this.terrainTransformGroup = new TransformGroup();
 		
 		terrainTransformGroup.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
 		terrainTransformGroup.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
@@ -42,10 +45,10 @@ public class Terrain {
 		return terrainTransformGroup;
 	}
 	
-	private void addTree(TransformGroup terrainTransformGroup, TreeBuilder tree) {
+	private void addTree(TransformGroup terrainTransformGroup, TransformNode tree) {
 
-		terrainTransformGroup.addChild(tree.getRoot());
-//		terrainTransformGroup.addChild(new ColorCube());
+		terrainTransformGroup.addChild(tree);
+        //terrainTransformGroup.addChild(new ColorCube());
 	}
 	
 }
