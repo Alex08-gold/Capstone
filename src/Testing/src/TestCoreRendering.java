@@ -2,6 +2,7 @@ package Testing.src;
 
 import com.sun.j3d.utils.universe.SimpleUniverse;
 import j3dRendering.src.Core;
+import j3dRendering.src.FixedBrick;
 
 import javax.media.j3d.*;
 import javax.swing.*;
@@ -44,7 +45,7 @@ public class TestCoreRendering extends Applet {
         objTrans.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
         objScale.addChild(objTrans);
 
-        objTrans.addChild(new Core());
+        objTrans.addChild(new FixedBrick());
 
         BoundingSphere bounds = new BoundingSphere(new Point3d(0.0,0.0,0.0), 100.0);
         Color3f bgColor = new Color3f(1.0f, 1.0f, 1.0f);
@@ -57,6 +58,7 @@ public class TestCoreRendering extends Applet {
     public static void main(String[] args) throws FileNotFoundException {
         System.setProperty("sun.awt.noerasebackground", "true");
         JPopupMenu.setDefaultLightWeightPopupEnabled(false);
+
 
         ToolTipManager ttm = ToolTipManager.sharedInstance();
         ttm.setLightWeightPopupEnabled(false);

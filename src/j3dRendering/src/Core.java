@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
 public class Core extends Component{
 
     public Core() throws FileNotFoundException {
-        //this.addChild(new ColorCube());
+
         ObjectFile objFile = new ObjectFile(ObjectFile.RESIZE | ObjectFile.TRIANGULATE);
         Scene objscene = objFile.load("/home/alex/IdeaProjects/Capstone/CoreComponent.obj");
 

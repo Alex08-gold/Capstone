@@ -87,6 +87,7 @@ public class TreeBuilder {
 	}
 
 	public TransformNode getRoot() {
+
 		return root;
 	}
 }
