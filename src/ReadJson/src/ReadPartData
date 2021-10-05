@@ -1,0 +1,15 @@
+public class ReadPartData extends ReadJson{
+
+	public ReadPartData(String filename) {
+		super(filename, "body", "part");
+	}
+	
+	
+	public void createData(JsonElement jsonElement, PartData partData) {
+        String id = jsonElement.getAsJsonObject().get("id").getAsString();
+        String type = jsonElement.getAsJsonObject().get("type").getAsString();
+        Boolean root = jsonElement.getAsJsonObject().get("root").getAsBoolean();
+        int orientation = jsonElement.getAsJsonObject().get("orientation").getAsInt();
+        partData.setId(id); partData.setType(type); partData.setRoot(root); partData.setOrientation(orientation);
+    }
+}

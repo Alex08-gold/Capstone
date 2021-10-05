@@ -46,11 +46,11 @@ public class PartData {
 		this.root = root;
 	}
 
-	public int getOrientation() {
+	public int getOrient() {
 		return this.orientation;
 	}
 
-	public void setOrientation(int orientation) {
+	public void setOrient(int orientation) {
 		this.orientation = orientation;
 	}
 }
