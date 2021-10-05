@@ -12,7 +12,6 @@ import java.io.FileNotFoundException;
 public class TransformNode extends TransformGroup {
 	
 	private PartData part;
-	private BrainData neuron;
 	
 	public TransformNode(PartData part, Component component) {
 		super();
@@ -35,28 +34,8 @@ public class TransformNode extends TransformGroup {
 				break;
 			default:
 				this.addChild(new Joint());
+				break;
 		}
-		this.neuron = null;
-	}
-
-	public TransformNode(PartData data, BrainData neuron) {
-		super();
-		this.data = data;
-		this.neuron = neuron;
-		this.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE); -- TransformGroup method, allows objects to be transformed at runtime 
-		
-		String type = data.getType();
-		switch(type) {
-		case "CoreComponent":
-			this.addChild(new CompCore());
-			break;
-		case "ActiveHinge":
-			this.addChild(new CompActiveHinge());
-			break;
-		case "FixedBrick":
-			this.addChild(new CompFixedBrick());
-			break;
-		}	
 	}
 	
 	public String getID() {
@@ -65,10 +44,6 @@ public class TransformNode extends TransformGroup {
 	
 	public int getOrient() {
 		return data.getOrient();
-	}
-	
-	public BrainData getNeuron(){
-		return neuron;
 	}
 	
 	public String toString(){
