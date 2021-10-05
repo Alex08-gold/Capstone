@@ -1,4 +1,4 @@
-package readjson;
+package ReadJson.src;
 
 import java.io.FileNotFoundException;
 import java.util.List;
