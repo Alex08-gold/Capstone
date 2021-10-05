@@ -1,4 +1,4 @@
-package main;
+package Tree.src;
 
 import components.CompActiveHinge;
 import components.CompCore;
