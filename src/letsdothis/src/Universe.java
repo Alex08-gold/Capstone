@@ -23,7 +23,7 @@ public class Universe extends Applet{
         universe = new SimpleUniverse(canvas);
 
         BranchGroup scene = createSceneGraph(terrain);
-//        addLights(scene);
+   //     addLights(scene);
         universe.getViewingPlatform().setNominalViewingTransform();
 
         universe.getViewer().getView().setBackClipDistance(100.0);
@@ -33,10 +33,9 @@ public class Universe extends Applet{
   
     
     private BranchGroup createSceneGraph(Terrain terrain) {
-    	// NOTE: This is a temporary method. It will be replaced with createTerrain() when STL files work
 
         BranchGroup objRoot = new BranchGroup();
-        addLights(objRoot);
+        //addLights(objRoot);
 
         TransformGroup objScale = new TransformGroup();
         Transform3D t3d = new Transform3D();
@@ -49,21 +48,23 @@ public class Universe extends Applet{
 
         objScale.addChild(objTrans);
 
-        objTrans.addChild(terrain.getTerrainTransformGroup());
+        objTrans.addChild(terrain.getTerrainTransformGroup()); //TransformNode holding tree
+        addLights(objTrans);
         objRoot.addChild(objScale);
 
         KeyNavigatorBehavior key = new KeyNavigatorBehavior(terrain.getTerrainTransformGroup());
         key.setSchedulingBounds(getBoundingSphere());
 		key.setEnable(true);
 
-		Appearance app = new Appearance();
-		Color3f objColor = new Color3f(0.8f, 0.2f, 0.1f);
-		Color3f black = new Color3f(0.5f, 0.5f, 0.5f);
-		Material mat = new Material();
-		mat.setLightingEnable(true);
-		mat.setAmbientColor(black);
-		app.setMaterial(mat);
+//		Appearance app = new Appearance();
+//		Color3f objColor = new Color3f(0.8f, 0.2f, 0.1f);
+//		Material mat = new Material();
+//		mat.setLightingEnable(true);
+//		//mat.setAmbientColor(objColor);
+//		app.setMaterial(mat);
 
+
+        terrain.addPlane(objRoot);
         objRoot.addChild(key);
         objRoot.compile();
         return objRoot;
@@ -89,8 +90,8 @@ public class Universe extends Applet{
         frame.setVisible(true);
     }
 
-    public void addLights(BranchGroup bg) {
-        Color3f color = new Color3f(1.0f, 1.0f, 0.0f);
+    public void addLights(TransformGroup bg) {
+        Color3f color = new Color3f(1.0f, 1.0f, 1.0f);
         Vector3f direction = new Vector3f(-1.0f, -1.0f, -1.0f);
         DirectionalLight light = new DirectionalLight(color, direction);
         light.setInfluencingBounds(getBoundingSphere());

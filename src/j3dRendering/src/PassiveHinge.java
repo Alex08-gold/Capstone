@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 public class PassiveHinge extends Component {
 
     public PassiveHinge() throws FileNotFoundException {
-           super("/home/alex/IdeaProjects/Capstone/object_files/PassiveHinge.obj");
+        super("object_files/PassiveHinge.obj");
+
     }
 }

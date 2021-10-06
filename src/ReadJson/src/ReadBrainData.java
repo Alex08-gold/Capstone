@@ -19,8 +19,12 @@ public class ReadBrainData implements ReadJsonData {
 
     @Override
     public void createData(JsonElement jsonElement, BrainData brainData) {
-
-        //TODO: Read in variables and variables 
+        String id = jsonElement.getAsJsonObject().get("id").getAsString();
+        double gain = jsonElement.getAsJsonObject().get("gain").getAsDouble();
+        //double period = jsonElement.getAsJsonObject().get("period").getAsDouble();
+        //double phaseOffset = jsonElement.getAsJsonObject().get("phaseOffset").getAsDouble();
+        brainData.setId(id); brainData.setGain(gain);
+        //brainData.setPeriod(period); brainData.setPhaseOffset(phaseOffset);
     }
     @Override
     public void createData(JsonElement jsonElement, ConnectData connectData) {

@@ -11,6 +11,6 @@ import java.io.FileNotFoundException;
 public class Core extends Component{
 
     public Core() throws FileNotFoundException {
-        super("/home/alex/IdeaProjects/Capstone/object_files/CoreComponent.obj");
+        super("object_files/CoreComponent.obj");
     }
 }

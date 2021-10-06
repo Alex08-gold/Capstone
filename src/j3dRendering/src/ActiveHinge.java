@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
 public class ActiveHinge extends Component{
 
     public ActiveHinge() throws FileNotFoundException {
-        super("/home/alex/IdeaProjects/Capstone/object_files/ActiveHinge_Frame.obj");
+        super("object_files/ActiveHinge_Frame.obj");
 
     }
 }

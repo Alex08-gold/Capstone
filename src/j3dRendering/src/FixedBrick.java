@@ -12,7 +12,6 @@ import java.io.FileNotFoundException;
 public class FixedBrick extends Component{
 
     public FixedBrick() throws FileNotFoundException {
-        super("/home/alex/IdeaProjects/Capstone/object_files/CoreComponent.obj");
-
+        super("object_files/CoreComponent.obj");
     }
 }

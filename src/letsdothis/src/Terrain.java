@@ -1,6 +1,8 @@
 package letsdothis.src;
 import Tree.src.TransformNode;
 import Tree.src.TreeBuilder;
+import com.sun.j3d.loaders.Scene;
+import com.sun.j3d.loaders.objectfile.ObjectFile;
 import com.sun.j3d.utils.geometry.ColorCube;
 
 import java.applet.*;
@@ -25,7 +27,8 @@ public class Terrain {
         t3d.setRotation(new AxisAngle4f(0.0f, 0.0f, 0.0f, 0.9f));
         t3d.setScale(0.125);
         terrainTransformGroup.setTransform(t3d);
-        this.addTree(terrainTransformGroup, tree);
+		this.terrainTransformGroup.addChild(tree);
+//        terrainTransformGroup.addChild(getPlane());
 	}
 	
 	public void setDimensions(int newHeight, int newWidth) {
@@ -45,10 +48,26 @@ public class Terrain {
 		return terrainTransformGroup;
 	}
 	
-	private void addTree(TransformGroup terrainTransformGroup, TransformNode tree) {
+//	private void addTree(TransformGroup terrainTransformGroup, TransformNode tree) {
+//
+//		terrainTransformGroup.addChild(tree);
+//	}
+	public static void addPlane(BranchGroup bg) {
 
-		terrainTransformGroup.addChild(tree);
-        //terrainTransformGroup.addChild(new ColorCube());
+		Scene scene = null;
+//		Shape3D shape = null;
+
+		//read in the geometry information from the data file
+		ObjectFile objFileloader = new ObjectFile(ObjectFile.RESIZE);
+		try {
+			scene = objFileloader.load("object_files/Body4.obj");
+		} catch (Exception e) {
+			scene = null;
+			System.err.println(e);
+		}
+		if (scene == null)
+			System.exit(1);
+		bg.addChild(scene.getSceneGroup());
+//		return scene.getSceneGroup();
 	}
-	
 }

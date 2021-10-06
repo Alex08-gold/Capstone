@@ -12,6 +12,7 @@ public class Test {
 		String filename = "/home/alex/RoboViz/GenerationBest-1.json";
 		ReadPartData partData = new ReadPartData(filename);
 		ReadConnectionData connectData = new ReadConnectionData(filename);
+		ReadBrainData brainData = new ReadBrainData(filename);
 
 		for (PartData pd:partData.getDataArrayList()) {
 			System.out.println(pd.toString());
@@ -22,7 +23,11 @@ public class Test {
 		for (ConnectData cd:connectData.getDataArrayList()) {
 			System.out.println(cd.toString());
 		}
+		System.out.println();
 
+        for (BrainData bd: brainData.getDataArrayList()){
+        	System.out.println(bd.toString());
+		}
 
 		System.out.println("done");
 	}

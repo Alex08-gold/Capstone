@@ -16,7 +16,7 @@ public class TransformNode extends TransformGroup {
 		super();
 		this.data = data;
 
-		System.out.println(data.toString());
+//		System.out.println(data.toString());
 		
 		String type = data.getType();
 		switch(type) {
@@ -32,14 +32,19 @@ public class TransformNode extends TransformGroup {
 			case "PassiveHinge":
 				this.addChild(new PassiveHinge());
 				break;
-
+			default:
+				this.addChild(new PassiveHinge());
+				break;
 		}
 	}
 	
 	public String getID() {
 		return data.getID();
 	}
-	public PartData getPartData(){return this.data;}
+	public PartData getPartData(){
+		return this.data;
+	}
+
 	public int getOrient() {
 		return data.getOrientation();
 	}

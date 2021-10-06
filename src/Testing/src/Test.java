@@ -37,7 +37,7 @@ public class Test {
 		parts.add(partHip2);
 
 		TransformNode root = new TransformNode(partCore);
-		TreeBuilder treeBuilder = new TreeBuilder(parts, connections);
+		TreeBuilder treeBuilder = new TreeBuilder(parts, connections, 0.0, 0.0);
 		treeBuilder.buildTree(root);
 
 		return root;

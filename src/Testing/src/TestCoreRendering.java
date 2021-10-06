@@ -51,7 +51,7 @@ public class TestCoreRendering extends Applet {
         Color3f bgColor = new Color3f(1.0f, 1.0f, 1.0f);
         Background bgNode = new Background(bgColor);
         bgNode.setApplicationBounds(bounds);
-        objRoot.addChild(bgNode);
+
 
         return objRoot;
     }
