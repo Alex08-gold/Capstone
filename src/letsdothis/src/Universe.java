@@ -1,19 +1,13 @@
 package letsdothis.src;
-import Tree.src.Transform;
 import com.sun.j3d.utils.behaviors.keyboard.KeyNavigatorBehavior;
-
-import javax.media.j3d.*;
-import com.sun.j3d.utils.geometry.Box;
 import com.sun.j3d.utils.universe.SimpleUniverse;
 
+import javax.media.j3d.*;
 import javax.swing.*;
 import javax.vecmath.*;
-
 import java.applet.Applet;
 import java.awt.*;
-import java.io.FileNotFoundException;
 
-import com.sun.j3d.utils.geometry.ColorCube;
 public class Universe extends Applet{
 
     private SimpleUniverse universe = null;
@@ -29,6 +23,7 @@ public class Universe extends Applet{
         universe = new SimpleUniverse(canvas);
 
         BranchGroup scene = createSceneGraph(terrain);
+//        addLights(scene);
         universe.getViewingPlatform().setNominalViewingTransform();
 
         universe.getViewer().getView().setBackClipDistance(100.0);
@@ -41,55 +36,38 @@ public class Universe extends Applet{
     	// NOTE: This is a temporary method. It will be replaced with createTerrain() when STL files work
 
         BranchGroup objRoot = new BranchGroup();
-        TransformGroup tg = new TransformGroup();
+        addLights(objRoot);
 
+        TransformGroup objScale = new TransformGroup();
         Transform3D t3d = new Transform3D();
         t3d.setScale(0.5);
-        tg.setTransform(t3d);
+        objScale.setTransform(t3d);
 
-        tg.addChild(terrain.getTerrainTransformGroup());
-        objRoot.addChild(tg);
+        TransformGroup objTrans = new TransformGroup();
+        objTrans.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
+        objTrans.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
 
+        objScale.addChild(objTrans);
 
-        
-        // Allow zooming in and out
-//        tg.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
-//        tg.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
+        objTrans.addChild(terrain.getTerrainTransformGroup());
+        objRoot.addChild(objScale);
 
-//        KeyNavigatorBehavior key = new KeyNavigatorBehavior(terrain.getTerrainTransformGroup());
-//        key.setSchedulingBounds(getBoundingSphere());
-//		key.setEnable(true);
-		
-		
-		// Set shape appearance
-//		Appearance app = new Appearance();
-//		Color3f objColor = new Color3f(0.8f, 0.2f, 0.1f);
-//		Color3f black = new Color3f(0.0f, 0.0f, 0.0f);
-//		Material mat = new Material();
-//		mat.setLightingEnable(true);
-//		mat.setAmbientColor(black);
-//		app.setMaterial(mat);
-//		shape.setAppearance(app);
-                
-        // Create shape
-//        Transform3D t3d = new Transform3D();
-//        t3d.setTranslation(new Vector3d(0.0, 0.0, 0.0));
-//        t3d.setRotation(new AxisAngle4f(0.0f, 0.0f, 0.0f, 0.9f));
-//        t3d.setScale(0.125);
-//        tg.setTransform(t3d);
-//        tg.addChild(new ColorCube());
-//        objRoot.addChild(tg);
-        objRoot.addChild(terrain.getTerrainTransformGroup());
-//        objRoot.addChild(key);
-//        objRoot.addChild(scene.getSceneGroup());
+        KeyNavigatorBehavior key = new KeyNavigatorBehavior(terrain.getTerrainTransformGroup());
+        key.setSchedulingBounds(getBoundingSphere());
+		key.setEnable(true);
+
+		Appearance app = new Appearance();
+		Color3f objColor = new Color3f(0.8f, 0.2f, 0.1f);
+		Color3f black = new Color3f(0.5f, 0.5f, 0.5f);
+		Material mat = new Material();
+		mat.setLightingEnable(true);
+		mat.setAmbientColor(black);
+		app.setMaterial(mat);
+
+        objRoot.addChild(key);
         objRoot.compile();
         return objRoot;
 
-    }
-
-    
-    protected Bounds createApplicationBounds() {
-    	return new BoundingSphere(new Point3d(0.0, 0.0, 0.0), 100.0);
     }
     
     BoundingSphere getBoundingSphere() {
@@ -109,5 +87,13 @@ public class Universe extends Applet{
         frame.setSize(1000, 1000);
         frame.getContentPane().add(universe);
         frame.setVisible(true);
+    }
+
+    public void addLights(BranchGroup bg) {
+        Color3f color = new Color3f(1.0f, 1.0f, 0.0f);
+        Vector3f direction = new Vector3f(-1.0f, -1.0f, -1.0f);
+        DirectionalLight light = new DirectionalLight(color, direction);
+        light.setInfluencingBounds(getBoundingSphere());
+        bg.addChild(light);
     }
 }

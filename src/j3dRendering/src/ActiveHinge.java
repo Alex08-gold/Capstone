@@ -8,11 +8,11 @@ import javax.media.j3d.Transform3D;
 import javax.vecmath.Vector3d;
 import java.io.FileNotFoundException;
 
-// For visualisation of a FixedBrick body part
-public class FixedBrick extends Component{
+// For visualisation of all joints
+public class ActiveHinge extends Component{
 
-    public FixedBrick() throws FileNotFoundException {
-        super("/home/alex/IdeaProjects/Capstone/object_files/CoreComponent.obj");
+    public ActiveHinge() throws FileNotFoundException {
+        super("/home/alex/IdeaProjects/Capstone/object_files/ActiveHinge_Frame.obj");
 
     }
 }
