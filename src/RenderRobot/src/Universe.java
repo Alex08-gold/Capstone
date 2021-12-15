@@ -1,4 +1,4 @@
-package letsdothis.src;
+package RenderRobot.src;
 import com.sun.j3d.utils.behaviors.keyboard.KeyNavigatorBehavior;
 import com.sun.j3d.utils.universe.SimpleUniverse;
 
@@ -15,28 +15,24 @@ public class Universe extends Applet{
 
     public Universe(Terrain terrain) {
 
+        // Create a simple universe with standard configurations
         setLayout(new BorderLayout());
         GraphicsConfiguration config = SimpleUniverse.getPreferredConfiguration();
-
         canvas = new Canvas3D(config);
         add("Center", canvas);
         universe = new SimpleUniverse(canvas);
 
         BranchGroup scene = createSceneGraph(terrain);
-   //     addLights(scene);
         universe.getViewingPlatform().setNominalViewingTransform();
-
         universe.getViewer().getView().setBackClipDistance(100.0);
         universe.addBranchGraph(scene);
-
     }
   
     
     private BranchGroup createSceneGraph(Terrain terrain) {
 
+        // Create branch group to hold transform groups
         BranchGroup objRoot = new BranchGroup();
-        //addLights(objRoot);
-
         TransformGroup objScale = new TransformGroup();
         Transform3D t3d = new Transform3D();
         t3d.setScale(0.5);
@@ -45,30 +41,22 @@ public class Universe extends Applet{
         TransformGroup objTrans = new TransformGroup();
         objTrans.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
         objTrans.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
-
         objScale.addChild(objTrans);
 
-        objTrans.addChild(terrain.getTerrainTransformGroup()); //TransformNode holding tree
+        // TransformNode holding tree
+        objTrans.addChild(terrain.getTerrainTransformGroup());
         addLights(objTrans);
         objRoot.addChild(objScale);
 
+        // Create key navigator class to allow thee user to zoom in and out
         KeyNavigatorBehavior key = new KeyNavigatorBehavior(terrain.getTerrainTransformGroup());
         key.setSchedulingBounds(getBoundingSphere());
 		key.setEnable(true);
 
-//		Appearance app = new Appearance();
-//		Color3f objColor = new Color3f(0.8f, 0.2f, 0.1f);
-//		Material mat = new Material();
-//		mat.setLightingEnable(true);
-//		//mat.setAmbientColor(objColor);
-//		app.setMaterial(mat);
-
-
-        terrain.addPlane(objRoot);
+        Terrain.addPlane(objRoot);
         objRoot.addChild(key);
         objRoot.compile();
         return objRoot;
-
     }
     
     BoundingSphere getBoundingSphere() {
@@ -91,6 +79,8 @@ public class Universe extends Applet{
     }
 
     public void addLights(TransformGroup bg) {
+
+        // Adds light to the environment so that components can be seen
         Color3f color = new Color3f(1.0f, 1.0f, 1.0f);
         Vector3f direction = new Vector3f(-1.0f, -1.0f, -1.0f);
         DirectionalLight light = new DirectionalLight(color, direction);

@@ -1,18 +1,15 @@
-package Testing.src;
+package RenderRobot.src;
 
 import ReadJson.src.ReadBrainData;
 import ReadJson.src.ReadConnectionData;
 import ReadJson.src.ReadJsonData;
 import ReadJson.src.ReadPartData;
-import Tree.src.TransformNode;
 import Tree.src.TreeBuilder;
-import letsdothis.src.Terrain;
-import letsdothis.src.Universe;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class DriverTest {
+public class Driver {
     public static void main(String[] argsInput) throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);

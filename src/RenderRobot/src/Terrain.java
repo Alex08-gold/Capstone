@@ -1,10 +1,9 @@
-package letsdothis.src;
+package RenderRobot.src;
 import Tree.src.TransformNode;
 import Tree.src.TreeBuilder;
 import com.sun.j3d.loaders.Scene;
 import com.sun.j3d.loaders.objectfile.ObjectFile;
 import com.sun.j3d.utils.geometry.ColorCube;
-
 import java.applet.*;
 import javax.media.j3d.*;
 import javax.vecmath.*;
@@ -17,8 +16,9 @@ public class Terrain {
 	public Terrain(int height, int width, TransformNode tree) {
 		this.height = height;
 		this.width = width;
+
+		// Create transform group that the robot body tree can be attached to
 		this.terrainTransformGroup = new TransformGroup();
-		
 		terrainTransformGroup.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
 		terrainTransformGroup.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
 		
@@ -28,7 +28,6 @@ public class Terrain {
         t3d.setScale(0.125);
         terrainTransformGroup.setTransform(t3d);
 		this.terrainTransformGroup.addChild(tree);
-//        terrainTransformGroup.addChild(getPlane());
 	}
 	
 	public void setDimensions(int newHeight, int newWidth) {
@@ -47,17 +46,12 @@ public class Terrain {
 	public TransformGroup getTerrainTransformGroup() {
 		return terrainTransformGroup;
 	}
-	
-//	private void addTree(TransformGroup terrainTransformGroup, TransformNode tree) {
-//
-//		terrainTransformGroup.addChild(tree);
-//	}
+
 	public static void addPlane(BranchGroup bg) {
 
 		Scene scene = null;
-//		Shape3D shape = null;
 
-		//read in the geometry information from the data file
+		// Read in the Body4.obj file. This is a rectangle that functions as a plane.
 		ObjectFile objFileloader = new ObjectFile(ObjectFile.RESIZE);
 		try {
 			scene = objFileloader.load("object_files/Body4.obj");
@@ -67,7 +61,8 @@ public class Terrain {
 		}
 		if (scene == null)
 			System.exit(1);
+
+		// Add the scene graph to the branch group as a child
 		bg.addChild(scene.getSceneGroup());
-//		return scene.getSceneGroup();
 	}
 }
